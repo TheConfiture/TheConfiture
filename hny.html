@@ -17,7 +17,6 @@
         msg: document.getElementById('msg').value,
         sender: document.getElementById('sender').value
       }
-      alert(liff)
 
       const flex = {
   "type": "bubble",
@@ -250,23 +249,25 @@
     "margin": "none"
   }
 }
-if (liff.isApiAvailable('shareTargetPicker')) {
-  const result = await liff.shareTargetPicker([
-        {
-          "type": "flex",
-          "altText": "Happy New Year | 謹賀新年",
-          "contents": flex 
+      if (liff.isApiAvailable('shareTargetPicker')) {
+        alert("Sending...")
+        const result = await liff.shareTargetPicker([
+          {"type":"text","text":"test"}
+              // {
+              //   "type": "flex",
+              //   "altText": "Happy New Year | 謹賀新年",
+              //   "contents": flex 
+              // }
+            ])
+        if (result) {
+          liff.closeWindow();
+        } else {
+          liff.closeWindow();
         }
-      ])
-      if (result) {
-        liff.closeWindow();
-      } else {
-        liff.closeWindow();
+      } else
+      {
+        alert("Cannot Share Message")
       }
-} else
-{
-  alert("Cannot Share Message")
-}
     }
     function logOut() {
       liff.logout()
