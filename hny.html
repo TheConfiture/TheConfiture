@@ -26,10 +26,6 @@
     "url": "https://theconfiture.github.io/TheConfiture/images/header.png",
     "size": "full",
     "aspectMode": "cover",
-    "action": {
-      "type": "uri",
-      "uri": "http://linecorp.com/"
-    },
     "gravity": "top",
     "align": "center",
     "aspectRatio": "2167:178"
@@ -52,13 +48,24 @@
             "type": "text",
             "text": data.msg,
             "wrap": true,
-            "size": "lg"
+            "size": "lg",
+            "align": "center"
           },
           {
             "type": "text",
-            "text": data.sender,
             "align": "end",
-            "size": "lg"
+            "size": "lg",
+            "contents": [
+              {
+                "type": "span",
+                "text": "From ",
+                "size": "xxs"
+              },
+              {
+                "type": "span",
+                "text": data.sender
+              }
+            ]
           }
         ],
         "paddingAll": "xxl"
@@ -77,8 +84,7 @@
             "height": "sm",
             "style": "link"
           }
-        ],
-        "paddingAll": "xxl"
+        ]
       },
       {
         "type": "image",
@@ -241,7 +247,7 @@
         "type": "button",
         "action": {
           "type": "uri",
-          "label": "The Confiture",
+          "label": "The Confiture >",
           "uri": "https://lin.ee/i4k3BeU"
         },
         "height": "sm",
