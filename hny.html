@@ -17,7 +17,8 @@
         msg: document.getElementById('msg').value,
         sender: document.getElementById('sender').value
       }
-      // alert(JSON.stringify(data))
+      alert(JSON.stringify(data))
+
       const flex = {
   "type": "bubble",
   "size": "giga",
@@ -288,7 +289,7 @@
     </span>
     <span class="mdc-text-field__resizer">
       <textarea class="mdc-text-field__input" aria-labelledby="msg-id" rows="4"
-        cols="40" maxlength="140" id="msg"></textarea>
+        cols="40" maxlength="200" id="msg"></textarea>
     </span>
   </label>
   <div class="mdc-text-field-helper-line">
