@@ -263,21 +263,17 @@
     "margin": "none"
   }
 }
-      const result = await liff.shareTargetPicker([
-              {
-                "type": "flex",
-                "altText": "Happy New Year | 謹賀新年",
-                "contents": flex 
-              }
-            ])
-        if (result) {
-          liff.closeWindow();
-        } else {
-          liff.closeWindow();
-        }
-      } else
-      {
-        alert("Cannot Share Message")
+    const result = await liff.shareTargetPicker([
+            {
+              "type": "flex",
+              "altText": "Happy New Year | 謹賀新年",
+              "contents": flex 
+            }
+          ])
+      if (result) {
+        liff.closeWindow();
+      } else {
+        liff.closeWindow();
       }
     }
     function logOut() {
