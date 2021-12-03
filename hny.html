@@ -250,7 +250,8 @@
     "margin": "none"
   }
 }
-      const result = await liff.shareTargetPicker([
+if (liff.isApiAvailable('shareTargetPicker')) {
+  const result = await liff.shareTargetPicker([
         {
           "type": "flex",
           "altText": "Happy New Year | 謹賀新年",
@@ -262,6 +263,10 @@
       } else {
         liff.closeWindow();
       }
+} else
+{
+  alert("Cannot Share Message")
+}
     }
     function logOut() {
       liff.logout()
