@@ -13,12 +13,12 @@
   <script>
     
     async function sendShare() {
-        const data={
-          msg: document.getElementById('msg').value,
-          sender: document.getElementById('sender').value
-        }
-        alert(JSON.stringify(data))
-        const flex = {
+      const data={
+        msg: document.getElementById('msg').value,
+        sender: document.getElementById('sender').value
+      }
+      // alert(JSON.stringify(data))
+      const flex = {
   "type": "bubble",
   "size": "giga",
   "hero": {
@@ -72,7 +72,7 @@
             "action": {
               "type": "uri",
               "label": "Send greeting card to your friends",
-              "uri": "http://linecorp.com/"
+              "uri": "https://liff.line.me/1656645961-0xv36j52"
             },
             "height": "sm",
             "style": "link"
@@ -141,7 +141,12 @@
                 "cornerRadius": "50px"
               }
             ],
-            "justifyContent": "space-between"
+            "justifyContent": "space-between",
+            "action": {
+              "type": "uri",
+              "label": "action",
+              "uri": "https://line.me/R/home/public/post?id=yoo6651z&postId=1163785039502016843"
+            }
           },
           {
             "type": "box",
@@ -196,7 +201,12 @@
               }
             ],
             "justifyContent": "space-between",
-            "cornerRadius": "none"
+            "cornerRadius": "none",
+            "action": {
+              "type": "uri",
+              "label": "action",
+              "uri": "https://line.me/R/home/public/post?id=yoo6651z&postId=1163785071702016967"
+            }
           }
         ],
         "paddingAll": "md"
@@ -239,19 +249,19 @@
     "margin": "none"
   }
 }
-        const result = await liff.shareTargetPicker([
-          {
-            "type": "flex",
-            "altText": "Happy New Year | 謹賀新年",
-            "contents": flex 
-          }
-        ])
-        if (result) {
-          liff.closeWindow();
-        } else {
-          liff.closeWindow();
+      const result = await liff.shareTargetPicker([
+        {
+          "type": "flex",
+          "altText": "Happy New Year | 謹賀新年",
+          "contents": flex 
         }
+      ])
+      if (result) {
+        liff.closeWindow();
+      } else {
+        liff.closeWindow();
       }
+    }
     function logOut() {
       liff.logout()
       window.location.reload()
