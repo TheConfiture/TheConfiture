@@ -250,7 +250,7 @@
   }
 }
       if (liff.isApiAvailable('shareTargetPicker')) {
-        alert("Sending...")
+        alert("Sending... while loggin in = " + liff.isLoggedIn())
         const result = await liff.shareTargetPicker([
           {"type":"text","text":"test"}
               // {
