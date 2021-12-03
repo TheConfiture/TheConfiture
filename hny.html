@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0,viewport-fit=cover">
+  <link href="https://unpkg.com/material-components-web@v5.0.0/dist/material-components-web.min.css" rel="stylesheet">
+  <script src="https://unpkg.com/material-components-web@v5.0.0/dist/material-components-web.min.js"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <title>Send Card | The Confiture</title>
+  <script charset="utf-8" src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
+</head>
+<body>
+  <script>
+    
+    async function sendShare() {
+        const data={
+          msg: document.getElementById('msg').value,
+          sender: document.getElementById('sender').value
+        }
+        alert(JSON.stringify(data))
+        const flex = {
+  "type": "bubble",
+  "size": "giga",
+  "hero": {
+    "type": "image",
+    "url": "https://theconfiture.github.io/TheConfiture/images/header.png",
+    "size": "full",
+    "aspectMode": "cover",
+    "action": {
+      "type": "uri",
+      "uri": "http://linecorp.com/"
+    },
+    "gravity": "top",
+    "align": "center",
+    "aspectRatio": "2167:178"
+  },
+  "body": {
+    "type": "box",
+    "layout": "vertical",
+    "contents": [
+      {
+        "type": "image",
+        "url": "https://theconfiture.github.io/TheConfiture/images/happy.png",
+        "size": "75%",
+        "aspectRatio": "1053:386"
+      },
+      {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "text",
+            "text": data.msg,
+            "wrap": true,
+            "size": "lg"
+          },
+          {
+            "type": "text",
+            "text": data.sender,
+            "align": "end",
+            "size": "lg"
+          }
+        ],
+        "paddingAll": "md"
+      },
+      {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "button",
+            "action": {
+              "type": "uri",
+              "label": "Send greeting card to your friends",
+              "uri": "http://linecorp.com/"
+            },
+            "height": "sm",
+            "style": "link"
+          }
+        ],
+        "paddingAll": "none"
+      },
+      {
+        "type": "image",
+        "url": "https://theconfiture.github.io/TheConfiture/images/ribbon.png",
+        "aspectRatio": "2167:178",
+        "size": "full"
+      },
+      {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "box",
+            "layout": "horizontal",
+            "contents": [
+              {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "รู้จักเชฟ",
+                    "wrap": true,
+                    "weight": "bold",
+                    "size": "sm"
+                  },
+                  {
+                    "type": "text",
+                    "wrap": true,
+                    "contents": [
+                      {
+                        "type": "span",
+                        "text": "เชฟป๊อบ โสรจ ไตรตียะประเสริฐ อดีตวิศวกรในญี่ปุ่น ผู้หลงใหลในเสน่ห์ของขนมหวาน ",
+                        "size": "xs"
+                      },
+                      {
+                        "type": "span",
+                        "text": "... (อ่านต่อ)",
+                        "decoration": "underline",
+                        "size": "xs"
+                      }
+                    ],
+                    "size": "xs"
+                  }
+                ],
+                "flex": 3,
+                "justifyContent": "center"
+              },
+              {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                  {
+                    "type": "image",
+                    "url": "https://theconfiture.github.io/TheConfiture/images/chef-square.jpg",
+                    "aspectRatio": "742:742",
+                    "size": "full"
+                  }
+                ],
+                "cornerRadius": "50px"
+              }
+            ],
+            "justifyContent": "space-between"
+          },
+          {
+            "type": "box",
+            "layout": "horizontal",
+            "contents": [
+              {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                  {
+                    "type": "image",
+                    "url": "https://theconfiture.github.io/TheConfiture/images/kouhaku01.jpg",
+                    "flex": 1,
+                    "size": "full",
+                    "aspectRatio": "1040:1040"
+                  }
+                ],
+                "cornerRadius": "50px"
+              },
+              {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "วิธีทาน",
+                    "weight": "bold",
+                    "size": "sm"
+                  },
+                  {
+                    "type": "text",
+                    "wrap": true,
+                    "size": "xs",
+                    "contents": [
+                      {
+                        "type": "span",
+                        "text": "แยมผลไม้ระดับความหวานต่ำ ปราศจากสารกันเสีย การเก็บรักษากรณียังไม่เปิด",
+                        "size": "xs"
+                      },
+                      {
+                        "type": "span",
+                        "text": "... (อ่านต่อ)",
+                        "size": "xs",
+                        "decoration": "underline"
+                      }
+                    ]
+                  }
+                ],
+                "flex": 3,
+                "paddingAll": "sm",
+                "justifyContent": "center"
+              }
+            ],
+            "justifyContent": "space-between",
+            "cornerRadius": "none"
+          }
+        ],
+        "paddingAll": "md"
+      }
+    ],
+    "offsetTop": "none",
+    "offsetBottom": "none",
+    "offsetStart": "none",
+    "offsetEnd": "none",
+    "paddingAll": "none"
+  },
+  "footer": {
+    "type": "box",
+    "layout": "vertical",
+    "spacing": "none",
+    "contents": [
+      {
+        "type": "button",
+        "action": {
+          "type": "uri",
+          "label": "The Confiture",
+          "uri": "https://lin.ee/i4k3BeU"
+        },
+        "height": "sm",
+        "style": "link",
+        "offsetTop": "none"
+      },
+      {
+        "type": "image",
+        "url": "https://theconfiture.github.io/TheConfiture/images/header.png",
+        "aspectRatio": "2167:178",
+        "size": "full"
+      }
+    ],
+    "offsetTop": "none",
+    "offsetBottom": "none",
+    "offsetStart": "none",
+    "offsetEnd": "none",
+    "paddingAll": "none",
+    "margin": "none"
+  }
+}
+        const result = await liff.shareTargetPicker([
+          {
+            "type": "flex",
+            "altText": "Happy New Year | 謹賀新年",
+            "contents": flex 
+          }
+        ])
+        if (result) {
+          liff.closeWindow();
+        } else {
+          liff.closeWindow();
+        }
+      }
+    function logOut() {
+      liff.logout()
+      window.location.reload()
+    }
+    async function main() {
+      await liff.init({ liffId: "1656645961-0xv36j52B" })
+      if (liff.isLoggedIn()) {
+        // sendShare()
+      } else {
+        liff.login()
+      }
+    }
+    main()
+  </script>
+  <img src="images/header.png" width="100%">
+  <img src="images/happy.png" width="100%">
+  <label class="mdc-text-field mdc-text-field--textarea">
+    <span class="mdc-notched-outline">
+      <span class="mdc-notched-outline__leading"></span>
+      <span class="mdc-notched-outline__notch">
+        <span class="mdc-floating-label" id="msg-id">คำอวยพร</span>
+      </span>
+      <span class="mdc-notched-outline__trailing"></span>
+    </span>
+    <span class="mdc-text-field__resizer">
+      <textarea class="mdc-text-field__input" aria-labelledby="msg-id" rows="4"
+        cols="40" maxlength="140" id="msg"></textarea>
+    </span>
+  </label>
+  <div class="mdc-text-field-helper-line">
+    <div class="mdc-text-field-character-counter">0 / 200</div>
+  </div>
+    <label class="mdc-text-field mdc-text-field--filled mdc-text-field--fullwidth">
+      <span class="mdc-text-field__ripple"></span>
+      <span class="mdc-floating-label" id="sender-id">ผู้ส่ง</span>
+      <input class="mdc-text-field__input" type="text" aria-labelledby="sender-id" required id="sender">
+      <span class="mdc-line-ripple"></span>
+    </label>
+    <img src="images/ribbon.png" width="100%">
+    <img src="images/header.png" width="100%">
+    <button class="mdc-button mdc-button--raised mdc-button--leading" onclick="sendShare()" style="width: 100%;"">
+      <span class="mdc-button__ripple"></span>
+      <span class="mdc-button__label">Send</span>
+      <i class="material-icons mdc-button__icon" aria-hidden="true">send</i>
+    </button>
+    <!-- <div style="margin-right: 0;margin-left: auto;width: 100%;">
+      <div class="mdc-layout-grid" >
+        <div class="mdc-layout-grid__inner">
+          <div class="mdc-layout-grid__cell"></div>
+          <div class="mdc-layout-grid__cell"></div>
+          <div class="mdc-layout-grid__cell" style="margin-right: 0;margin-left: auto;">
+            <button class="mdc-button mdc-button--raised mdc-button--leading" onclick="sendShare()">
+              <span class="mdc-button__ripple"></span>
+              <span class="mdc-button__label">Send</span>
+              <i class="material-icons mdc-button__icon" aria-hidden="true">send</i>
+            </button>
+          </div>
+        </div>
+      </div>
+      </div> -->
+    
+    <!-- <button id="btnShare" onclick="sendShare()">Send</button> -->
+    <!-- <button id="btnLogin" onclick="liff.login()">Log In</button>
+    <button id="btnLogOut" onclick="logOut()">Log Out</button> -->
+  <script>
+    const buttons = document.querySelectorAll('.mdc-button');
+    for (const button of buttons) {
+      mdc.ripple.MDCRipple.attachTo(button);
+    }
+
+    const textFields = document.querySelectorAll('.mdc-text-field');
+    for (const textField of textFields) {
+      mdc.textField.MDCTextField.attachTo(textField);
+    }
+
+    // const textFieldHelpers = document.querySelectorAll('.mdc-text-field-helper-text');
+    // for (const textField of textFields) {
+    //   mdc.textField.helperText.MDCTextFieldHelperText.attachTo(textField);
+    // }
+
+    // const NotchedOutline = [].map.call(document.querySelectorAll('.mdc-notched-outline'), function(el) {
+    //   return mdc.notchedOutline.MDCNotchedOutline.attachTo(el);
+    // });
+
+    // const floatingLabel = [].map.call(document.querySelectorAll('.mdc-floating-label'), function(el) {
+    //   return mdc.floatingLabel.MDCFloatingLabel.attachTo(el);
+    // });
+  </script>
+
+</body>
+</html>
